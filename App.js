@@ -7,7 +7,7 @@ var mysql = require('mysql');
 var fileUpload = require('express-fileupload');
 var mysqlConnCredentials = require('./routes/secure-credentials.json');
 
-var indexRouter = require('./routes');
+var indexRouter = require('./routes/Index');
 var loginRouter = require('./routes/Login');
 var signupRouter = require('./routes/Signup');
 var verificationRouter = require('./routes/Email-verification');
