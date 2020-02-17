@@ -159,7 +159,7 @@ con.query("SELECT * FROM commonAppTable", function (err, result, fields) {
                     foodObj: resDB,
                     foodObj1: global.globalRecipeResultReturnedInstance,
                     currIngrediants:stringToJson.extendedIngredients ,
-                    currInstruction: instructionArray,
+                    currInstruction: stringToJson1.analyzedInstructions[0].steps,
                     headerFileDisplayProperty: headerFileDisplayPropertyInst,
                     headerFileLoggedInDisplayProperty: headerFileLoggedInDisplayPropertyInst,
                     foodOrigin: "Sent via spoonacular"
