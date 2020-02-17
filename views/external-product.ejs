@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%=title%></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        .main-body{
+            background-color:#fcfcfc;
+            position:absolute;
+            width:100%;
+
+        }
+        .header{
+
+            background-color:white;
+            /*border:solid black 2px;*/
+            /* border-style: solid;*/
+            border-bottom: 1px groove #f2f5f5;
+            width:100%;
+            height:8%;
+        }
+
+        .page-name{
+            /* border:solid green 2px;*/
+            width:100%;
+            height:5%;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        .description{
+            /*border:solid black 2px;*/
+            width:100%;
+            height:25%;
+            text-align:center;
+            background-color:#f0f2f0;
+        }
+
+        #descTitle{
+            font-family: 'Abril Fatface', cursive;
+            font-size:30px;
+            color:palevioletred;
+        }
+
+        #DescDetail{
+            font-family: 'Quicksand', sans-serif;
+            font-size:20px;
+        }
+
+        .display{
+            width:80%;
+            /* height:100%;*/
+            /*  border:solid green 2px;*/
+            text-align:left;
+        }
+
+        .sign{
+            width:100%;
+            padding-left: 30px;
+            padding-top: 30px;
+            padding-right: 30px;
+            background-color:white;
+            color:palevioletred;
+            height:200px;
+            /*border:solid red 2px;*/
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        /*components*/
+
+        #StreeLogo{
+            background-color:palevioletred;
+            border-radius: 0px 50px 50px 0px;
+            border:none;
+            width:80%;
+            font-size:30px;
+            font-family: 'Abril Fatface', cursive;
+            height:100%;
+
+        }
+
+        #FontPageName{
+
+            left:10%;
+        }
+
+        #flexSaree{
+            left:60%;
+        }
+
+        .card{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .footer{
+            background-color:palevioletred;
+            width:100%;
+            /*border:solid green 2px;*/
+            height:200px;
+        }
+
+        #signUpBtn{
+            background-color:palevioletred;
+            color:white;
+        }
+
+        #singleProduct{
+        //border:solid red;
+        }
+
+        #sideSmallPics{
+            border:solid black 0px;
+            padding-top:2px;
+            padding-bottom:2px;
+        }
+
+        #prodDesc{
+        //border:solid red;
+            background-color:#d2d3d6;
+        }
+
+        #desctext0{
+            font-size:20px;
+            font-family: 'Raleway', sans-serif;
+            text-align:left;
+        }
+
+        #desctext1{
+            font-size:30px;
+            font-family: 'Abril Fatface', cursive;
+            text-align:left;
+        }
+
+        #desctext2{
+            font-size:20px;
+            font-family: 'Raleway', sans-serif;
+            text-align:left;
+        }
+
+        #linewizedetail{
+            width:100%;
+            background-color:#e8eaed;
+            padding-left:130px;
+            font-family: 'Raleway', sans-serif;
+        }
+    </style>
+</head>
+<body onload="loadDoc()">
+
+<div class="main-body">
+
+    <!--------------------------------header--------------------------------->
+
+    <div style="display: <%=headerFileDisplayProperty%>"><% include Template/headerFile.ejs %></div>
+    <div style="display: <%=headerFileLoggedInDisplayProperty%>"><% include Template/headerFileLoggedIn.ejs %></div>
+
+    <!--------------------------------end of header----------------------------->
+
+    <!------------------------page name---------------------------------->
+    <br>
+    <div class="page-name">
+        <div class="row">
+            <div class="col-sm-12 col-md-12"><font color="gray" id="FontPageName" style="padding-left: 150px;"><%=desc%></font>
+            </div>
+        </div>
+    </div>
+
+    <!----------------end of page name---------------------------------->
+
+    <!----------------display--------------------------------->
+    <br>
+    <center><div class="display">
+
+            <!------------------------------------single product display large screen------------------------>
+            <div id="singleProduct">
+
+                <div class="row">
+
+
+                    <div class="col-sm-5 col-m-5 col-xs-12">
+                        <img class="shadow rounded" src="<%=foodImg%>" width="100%">
+                    </div>
+                    <div class="col-sm-7 col-m-7 col-xs-12" id="prodDesc">
+                        <br><br>
+                        <p id="desctext1"><b><%=foodName%></b></p>
+                        <p id="desctext0">By - Spoonacular.com</p><br>
+                        <!--------details go here--------------->
+                        <p></p>
+                        <h6><b>Ingredients : </b><p>
+
+                            <ul>
+                                <%currIngrediants.forEach(function(item){%>
+
+                                    <li><%=item.original%></li>
+
+                                <%});%>
+                            </ul>
+
+                            </p>
+                        </h6>
+                        <h6><b>Special Equipments : </b></h6>
+                        <h6><b>Recipie :</b> <p>
+
+                                <ul>
+                                    <%currInstruction.forEach(function (item) {%>
+
+                                        <li><%=item.step%></li>
+
+                                    <%});%>
+                                </ul>
+
+                            </p></h6>
+
+                        <BR><br>
+
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------------------end of single product display large screen------------------------>
+
+        </div></center><br><br>
+    <!----------------end of display--------------------------------->
+
+    <!--------------------------other foods--------------------------->
+
+    <!-----------------------------------end of other foods------------------>
+
+    <div class="m-5 p-0 text-center" style="width: 100%">
+
+        <p id="desctext1">Other Results</p>
+        <% include Template/spoonacularRec.ejs %>
+        <p id="desctext1">Similar Food Items</p><br>
+        <% include Template/prodRecomendation.ejs %>
+    <!------------------------------------footer------------------------------>
+
+    <% include Template/footerFile.ejs %>
+
+    <!--------------------------------end of footer--------------------->
+</div>
+<!---<div class="sign">
+
+</div>--->
+
+
+</body>
+</html>

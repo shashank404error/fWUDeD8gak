@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+
+    <style>
+        .main-body{
+            background-color:#fcfcfc;
+            position:absolute;
+            width:100%;
+
+        }
+
+        #desctext1{
+            font-size:30px;
+            font-family: 'Abril Fatface', cursive;
+            text-align:left;
+        }
+
+        .header{
+
+            background-color:white;
+            /*border:solid black 2px;*/
+            /* border-style: solid;*/
+            border-bottom: 1px groove #f2f5f5;
+            width:100%;
+            height:8%;
+        }
+
+        .page-name{
+            /* border:solid green 2px;*/
+            width:100%;
+            height:5%;
+            font-family: 'Poppins', sans-serif;
+
+        }
+
+        .description{
+            /*border:solid black 2px;*/
+            width:100%;
+            height:25%;
+            text-align:center;
+            background-color:#f0f2f0;
+        }
+
+        #descTitle{
+            font-family: 'Abril Fatface', cursive;
+            font-size:30px;
+            color:palevioletred;
+        }
+
+        #DescDetail{
+            font-family: 'Quicksand', sans-serif;
+            font-size:20px;
+        }
+
+        .display{
+            width:80%;
+            /* height:100%;*/
+            /*  border:solid green 2px;*/
+            text-align:center;
+        }
+
+        .sign{
+            width:100%;
+            padding-left: 30px;
+            padding-top: 30px;
+            padding-right: 30px;
+            background-color:white;
+            color:magenta;
+            height:200px;
+            /*border:solid red 2px;*/
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        /*components*/
+
+        #StreeLogo{
+            background-color:palevioletred;
+            border-radius: 0px 50px 50px 0px;
+            border:none;
+            width:80%;
+            font-size:30px;
+            font-family: 'Abril Fatface', cursive;
+            height:100%;
+
+        }
+
+        #FontPageName{
+
+            left:10%;
+        }
+
+        #flexSaree{
+            left:60%;
+        }
+
+        .card{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .footer{
+            background-color:palevioletred;
+            width:100%;
+            /*border:solid green 2px;*/
+            height:200px;
+        }
+
+        #signUpBtn{
+            background-color:palevioletred;
+            color:white;
+        }
+    </style>
+</head>
+<!--<body onload="loadDoc()">-->
+<body>
+<div class="main-body">
+
+    <!--------------------------------header--------------------------------->
+
+    <div style="display: <%=headerFileDisplayProperty%>"><% include Template/headerFile.ejs %></div>
+    <div style="display: <%=headerFileLoggedInDisplayProperty%>"><% include Template/headerFileLoggedIn.ejs %></div>
+    <!--------------------------------end of header----------------------------->
+
+    <!------------------------page name---------------------------------->
+    <br>
+    <div class="page-name">
+        <div class="row">
+            <div class="col-sm-12 col-md-12"><font color="gray" id="FontPageName" style="padding-left: 150px;"> <%=desc%> </font>
+            </div>
+        </div>
+    </div>
+
+    <!----------------end of page name---------------------------------->
+
+    <!----------------description---------------------------------->
+
+    <div class="description">
+        <div class="row">
+            <div class="col-sm-12 col-md-12" id="textdiv"> <p id="descTitle"><font size="7">FoodServer</font>.com<hr width="30%"></p>
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 pr-1 " style="border:solid green 0px">
+                        <p id="DescDetail0"></p>
+                    </div>
+                    <div class="col-sm-6 col-md-6 pl-1" style="border:solid green 0px">
+                        <p id="DescDetail"></p>
+                    </div>
+                </div>
+
+            </div>
+        </div><br>
+    </div><br>
+
+    <!----------------end of description--------------------------------->
+
+    <!----------------display--------------------------------->
+
+    <center><div class="display">
+
+            <!--------------------------flexbox for saree------------------------------->
+            <p id="desctext1">Food Items</p>
+
+            <% include Template/spoonacularRec.ejs %>
+            <!---------------------------------end of flexbox------------------------------->
+            <p id="desctext1">Similar Items</p>
+            <% include Template/prodRecomendation.ejs %>
+
+        </div></center>
+    <br>
+    <!----------------end of display--------------------------------->
+
+    <!------------------------------------footer------------------------------>
+
+    <% include Template/footerFile.ejs %>
+
+    <!--------------------------------end of footer--------------------->
+</div>
+<!---<div class="sign">
+
+</div>--->
+<!----------------------------------------------------ajax for auto update----------------------------------->
+<!--<script>
+  function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+        myFunction1(this);
+      }
+    };
+    xhttp.open("GET", "update_stree_newsfeed.xml", true);
+    xhttp.send();
+  }
+  function myFunction(xml) {
+    var i;
+    var xmlDoc = xml.responseXML;
+    var img="<img width=\"100%\" height=\"300px\" src=\"./";
+    var x = xmlDoc.getElementsByTagName("CD");
+    for (i = 0; i <x.length; i++) {
+      img += x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue+"\">";
+    }
+    document.getElementById("DescDetail").innerHTML = img;
+  }
+  function myFunction1(xml) {
+    var i;
+    var xmlDoc = xml.responseXML;
+    var img1="<img width=\"100%\" height=\"300px\" src=\"./";
+    var x = xmlDoc.getElementsByTagName("CD");
+    for (i = 0; i <x.length; i++) {
+      img1 += x[i].getElementsByTagName("LEGEND")[0].childNodes[0].nodeValue+"\">";
+    }
+    document.getElementById("DescDetail0").innerHTML = img1;
+  }
+</script>-->
+<!--------------------------------------------end of ajax for autoupdate---------------------------------------->
+
+<!----------------------------------------------- google oauth login ------------------------------------------->
+
+
+<!----------------------------------------------- google oauth login end here------------------------------------------->
+
+
+</body>
+</html>

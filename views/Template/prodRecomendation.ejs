@@ -1,0 +1,25 @@
+<div class = "row m-2">
+
+<%foodObj.forEach(function(item){%>
+
+
+<div class="col-sm-4 col-md-4 pr-2 mb-3">
+    <div class="card" style="width:300px">
+        <img class="card-img-top" src="/images/<%=item.imgSrc%>" alt="Card image" style="height:300px">
+        <div class="card-body">
+            <h4 class="card-title" id="foodNameCard"><%=item.fName%></h4>
+            <p class="card-text"><h6>Uploaded By : <font color="#db7093"><i><%=item.owner%></i></font></h6><h6><font color="#708090">Origin : <%=foodOrigin%></font></h6>
+            <form name="loginForm" method="POST" action="/detailprod">
+                <input type="text" name="isName" value="<%=welcomeMsg%>" style="display: none">
+                <input type="text" name="foodId" value="<%=item.fid%>" style="display: none">
+            <input type="submit" class="btn shadow rounded" id="signUpBtn" style="width:90%; background-color:forestgreen;" value="Show More"></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<%});%>
+
+</div>
