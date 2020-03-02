@@ -149,6 +149,12 @@ con.query("SELECT * FROM commonAppTable", function (err, result, fields) {
             apiRequestCall.detailInstructionInfo(function (response1) {
                 var jsonToString1 = JSON.stringify(response1);
                 var stringToJson1 = JSON.parse(jsonToString1);
+                if(typeof stringToJson1.analyzedInstructions[0] !== "undefined"){
+                    var a2z = stringToJson1.analyzedInstructions[0].steps;
+                }
+                else{
+                    var a2z = [];
+                }
 
                 res.render('external-product', {
                     title: 'FoodServer | ' + stringToJson.title,
@@ -159,7 +165,7 @@ con.query("SELECT * FROM commonAppTable", function (err, result, fields) {
                     foodObj: resDB,
                     foodObj1: global.globalRecipeResultReturnedInstance,
                     currIngrediants:stringToJson.extendedIngredients ,
-                    currInstruction: stringToJson1.analyzedInstructions[0].steps,
+                    currInstruction: a2z,
                     headerFileDisplayProperty: headerFileDisplayPropertyInst,
                     headerFileLoggedInDisplayProperty: headerFileLoggedInDisplayPropertyInst,
                     foodOrigin: "Sent via spoonacular"
