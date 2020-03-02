@@ -22,28 +22,7 @@
 </div>
 </div>
 
-<!--<div class="header d-md-none d-lg-none d-xl-none d-sm-block d-xs-block">
-<div class="row">
-  <div class="col-4 col-sm-4 col-xs-4"><button type="button" id="StreeLogo" class="btn btn-primary btn-lg">S</button></div>
-
-  <!--<div class="col-6 col-sm-6 col-md-6" style="padding-top: 8px">
-      <form action="/action_page.php">
-       <div class="form-group">
-        <input type="email" class="form-control" id="email" placeholder="Search" width="75%">
-        <!--<button type="submit" class="btn btn-primary" width="25%">Search</button>-->
-       <!--</div>
-      </form> 
-  </div>-->
-
-  <!--<div class="col-8 col-sm-8 col-xs-8" style="padding-top: 8px; font-family: 'Quicksand', sans-serif">
-    <div class="row">
-     <div class="col-4 col-sm-4 col-xs-4" style="padding-left: 100px"> <font face="arial black">Collection</font> </div>
-     <div class="col-4 col-sm-4 col-xs-4"> <font face="arial black">Login </font></div>
-     <div class="col-4 col-sm-4 col-xs-4"> <i class='fas fa-dolly' style='font-size:30px'></i> </div>
-    </div>
-  </div>
-</div>
-</div>-->
+<!------------------------------mobile device ------------------------------------------>
 
 <div class="pos-f-t d-md-none d-lg-none d-xl-none d-sm-block d-xs-block">
   <div class="collapse" id="navbarToggleExternalContent">
@@ -59,6 +38,18 @@
           <button type="button" id="StreeLogo" class="btn btn-primary btn-lg"><a href="/" style="text-decoration: none;color: inherit">FoodServer</a></button>
        </div>
        <div class="col-4 col-sm-4 col-xs-4">
+
+           <!---------------serch functionality------------------------------->
+           <div class="col-5 col-sm-5 col-md-5" style="padding-top: 8px">
+               <form id="seachForm" method="POST" action="/search">
+                   <div class="form-group">
+                       <div class="row p-0" style="width: 100%"><input type="text" class="form-control" id="email" name="searchQuery" placeholder="Search" style="width: 90%">
+                           <input name="welcmmsg" style="display:none;" type="text" value="<%=welcomeMsg%>">
+                           <button form="seachForm" type="submit" class="btn btn-primary" style="width:10%;background-color: palevioletred;color: white;"><i class="fa fa-search" style="font-size:20px"></i></button></div>
+                   </div>
+               </form>
+           </div>
+           <!---------------serch functionality ends here------------------------------->
        </div>    
        <div class="col-2 col-sm-2 col-xs-2">    
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
